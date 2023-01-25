@@ -4,5 +4,38 @@
   Create an account or log in to start managing your personal image database!
 </h3>
 <% } else { %>
+
 <h1>Welcome <%= currentUser.username %>!</h1>
-<% } %>
+
+<%if (locals.currentUser.images.length === 0) { %>
+<%console.log(locals.currentUser.images.length) %>
+
+<h2>Start uploading images</h2>
+
+<form action="/profile/upload-image" method="POST">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Title for the image</label>
+    <input type="text" class="form-control" id="title" name="title" />
+  </div>
+  <div class="form-group"></div>
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Image (must be an URL)</label>
+    <input type="text" class="form-control" id="img" name="img" />
+  </div>
+  <div>
+    <button type="submit" class="btn btn-primary">Upload your image</button>
+  </div>
+</form>
+
+<% } else { %>
+<h2>Your images</h2>
+<%}%> <% } %>
+
+<script>
+  window.onload = function () {
+    if (!window.location.hash) {
+      window.location = window.location + "#loaded";
+      window.location.reload();
+    }
+  };
+</script>

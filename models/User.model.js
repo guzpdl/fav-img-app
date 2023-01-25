@@ -20,7 +20,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    images: [{ type: String }],
+    images: [{ title: { type: String }, img: { type: String } }],
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
