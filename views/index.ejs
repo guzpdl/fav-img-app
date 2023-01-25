@@ -1,1 +1,8 @@
-<h1>Hello World!</h1>
+<%if (!currentUser) { %>
+<h1>Welcome to <%= appTitle %>!</h1>
+<h3>
+  Create an account or log in to start managing your personal image database!
+</h3>
+<% } else { %>
+<h1>Welcome <%= currentUser.username %>!</h1>
+<% } %>

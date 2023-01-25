@@ -9,19 +9,14 @@ require("./db");
 // https://www.npmjs.com/package/express
 const express = require("express");
 
-// Handles the handlebars
-// https://www.npmjs.com/package/hbs
-const hbs = require("hbs");
-
 const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
-const capitalize = require("./utils/capitalize");
-const projectName = "fav-img-app";
+const projectName = "My Favorite Images";
 
-app.locals.appTitle = `${capitalize(projectName)}`;
+app.locals.appTitle = projectName;
 
 // 👇 Start handling routes here
 const allRoutes = require("./routes/index.routes");

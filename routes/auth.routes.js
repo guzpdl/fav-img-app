@@ -1,6 +1,4 @@
 const router = require("express").Router();
-const isLoggedOut = require("../middleware/isLoggedOut");
-const isLoggedIn = require("../middleware/isLoggedIn");
 const {
   signupForm,
   submitSignup,
@@ -8,15 +6,16 @@ const {
   submitLogin,
   logout,
 } = require("../controller/auth.controller");
+const isLoggedOut = require("../middleware/isLoggedOut");
 
-router.get("/signup", isLoggedOut, signupForm);
+router.get("/signup", signupForm);
 
 router.get("/login", isLoggedOut, loginForm);
 
-router.post("/signup", isLoggedOut, submitSignup);
+router.post("/signup", submitSignup);
 
-router.post("/login", isLoggedOut, submitLogin);
+router.post("/login", submitLogin);
 
-router.get("/logout", isLoggedIn, logout);
+router.get("/logout", logout);
 
 module.exports = router;

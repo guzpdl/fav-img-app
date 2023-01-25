@@ -22,6 +22,8 @@ const logout = (req, res) => {
   });
 };
 
+// --------------------------------------- SUBMIT SIGNUP -------------------------------
+
 const submitSignup = (req, res, next) => {
   const { username, email, password } = req.body;
 
@@ -66,6 +68,8 @@ const submitSignup = (req, res, next) => {
       }
     });
 };
+
+// ----------------------------------- LOGIN SUBMIT -----------------------------
 
 const submitLogin = (req, res, next) => {
   const { username, email, password } = req.body;
