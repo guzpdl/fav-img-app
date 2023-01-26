@@ -2,14 +2,6 @@
 
 <h4>Username: <%= userDetails.username %></h4>
 <h4>Email: <%= userDetails.email %></h4>
-<% if(userDetails.images.length !== 0){ %>
-<h4>Images:</h4>
-
-<% } else { %>
-
-<h4>You haven't uploaded any images</h4>
-
-<% } %>
 
 <a href="/profile/edit/<%= currentUser._id%>">Edit your profile info</a>
 

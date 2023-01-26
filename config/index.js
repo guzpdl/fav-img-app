@@ -70,7 +70,6 @@ module.exports = (app) => {
   // Middleware to render depending on session status
   app.use((req, res, next) => {
     res.locals.currentUser = req.session.currentUser;
-    console.log("LOCAL CURRENT USER ------------", res.locals.currentUser);
 
     next();
   });

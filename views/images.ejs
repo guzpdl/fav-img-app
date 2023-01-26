@@ -1,0 +1,30 @@
+<h1>Your images</h1>
+<div class="row">
+  <% userDetails.images.map((imageDetails) => { %>
+
+  <div class="card col-3 m-2" style="width: 18rem">
+    <img
+      class="card-img-top my-1"
+      src="<%=imageDetails.img%>"
+      alt="Card image article"
+    />
+
+    <div class="card-body">
+      <h5 class="card-title"><%= imageDetails.title %></h5>
+    </div>
+
+    <a
+      class="btn btn-dark mb-1"
+      href="/profile/images/edit/<%=imageDetails._id%>"
+      >Edit image</a
+    >
+
+    <form action="/profile/images/delete/<%=imageDetails._id%>" method="POST">
+      <button type="submit" class="btn btn-danger w-100 mb-1">
+        Delete image
+      </button>
+    </form>
+  </div>
+
+  <% }) %>
+</div>
