@@ -3,7 +3,9 @@
 <h4>Username: <%= userDetails.username %></h4>
 <h4>Email: <%= userDetails.email %></h4>
 
-<a href="/profile/edit/<%= currentUser._id%>">Edit your profile info</a>
+<a class="btn btn-secondary" href="/profile/edit/<%= currentUser._id%>"
+  >Edit your profile info</a
+>
 
 <script>
   window.onload = function () {

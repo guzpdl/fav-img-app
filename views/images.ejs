@@ -1,3 +1,11 @@
+<% if(userDetails.images.length === 0){ %>
+
+<h1>You don't have any uploaded images</h1>
+
+<a class="btn btn-dark" href="/">Upload image!</a>
+
+<% } else { %>
+
 <h1>Your images</h1>
 <div class="row">
   <% userDetails.images.map((imageDetails) => { %>
@@ -14,7 +22,7 @@
     </div>
 
     <a
-      class="btn btn-dark mb-1"
+      class="btn btn-secondary mb-1"
       href="/profile/images/edit/<%=imageDetails._id%>"
       >Edit image</a
     >
@@ -28,3 +36,6 @@
 
   <% }) %>
 </div>
+<a class="btn btn-dark mt-5" href="/">Upload a new image!</a>
+
+<% } %>

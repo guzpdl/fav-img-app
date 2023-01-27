@@ -9,18 +9,18 @@
 
 <h2>Upload images</h2>
 
-<form action="/profile/upload-image" method="POST">
+<form class="pt-2" action="/profile/upload-image" method="POST">
   <div class="form-group">
     <label for="exampleFormControlInput1">Title for the image</label>
-    <input type="text" class="form-control" id="title" name="title" />
+    <input type="text" class="form-control w-50" id="title" name="title" />
   </div>
   <div class="form-group"></div>
-  <div class="form-group">
+  <div class="form-group mt-2">
     <label for="exampleFormControlFile1">Image (must be an URL)</label>
-    <input type="text" class="form-control" id="img" name="img" required />
+    <input type="text" class="form-control w-50" id="img" name="img" required />
   </div>
   <div>
-    <button type="submit" class="btn btn-dark">Upload your image</button>
+    <button type="submit" class="btn btn-dark mt-2">Upload your image</button>
   </div>
 </form>
 

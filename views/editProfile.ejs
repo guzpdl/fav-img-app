@@ -1,21 +1,21 @@
 <h1>Edit your profile</h1>
 
-<form action="/profile/edit/<%= currentUser._id %>" method="POST">
-  <div class="form-group">
+<form class="pt-2" action="/profile/edit/<%= currentUser._id %>" method="POST">
+  <div class="form-group'>
     <label for="exampleFormControlInput1">Username</label>
     <input
       type="text"
-      class="form-control"
+      class="form-control w-25"
       id="username"
       name="username"
       value="<%= userDetails.username %>"
     />
   </div>
-  <div class="form-group">
+  <div class="form-group mt-2">
     <label for="exampleFormControlInput2">Email</label>
     <input
       type="text"
-      class="form-control"
+      class="form-control w-25"
       id="email"
       name="email"
       value="<%= userDetails.email %>"
@@ -23,6 +23,6 @@
   </div>
 
   <div>
-    <button type="submit" class="btn btn-dark">Update your profile</button>
+    <button type="submit" class="btn btn-dark mt-2">Update your profile</button>
   </div>
 </form>
