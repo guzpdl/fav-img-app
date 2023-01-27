@@ -38,7 +38,7 @@ const submitEditImage = async (req, res) => {
   const userId = req.session.currentUser._id;
 
   return await User.updateOne(
-    { "userDetails.images._id": imgId },
+    { "images._id": imgId },
     {
       $set: {
         "images.$[xxx].title": title,
@@ -47,7 +47,6 @@ const submitEditImage = async (req, res) => {
     },
     { arrayFilters: [{ "xxx._id": imgId }] }
   ).then((updatedUser) => {
-    console.log(updatedUser);
     return res.redirect(`/profile/images/${userId}`);
   });
 };
